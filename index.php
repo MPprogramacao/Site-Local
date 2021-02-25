@@ -30,6 +30,7 @@
             <div class="navbar-nav">
                 <a class="nav-link active" aria-current="page" href="#" onclick='mostra_oculta("1")'>Início</a>
                 <a class="nav-link" href="#" onclick='mostra_oculta("2")'>Agenda</a>
+                <a class="nav-link" href="#" onclick='mostra_oculta("4")'>To-Do</a>
                 <a class="nav-link" href="#" onclick='mostra_oculta("3")'>Arquivos</a>
                 
             </div>
@@ -151,6 +152,12 @@
                     </tr>
                 </tboy>
             </table>
+        </div>
+
+        <!-- DIV To-Do -->
+        <div id="4">
+            <h2 align="center">To-Do</h2>
+            <hr>
         </div>
     </div>
 
