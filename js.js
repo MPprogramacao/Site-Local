@@ -1,4 +1,4 @@
-var divs = 3;
+var divs = 4;
 var i = 2;
 
 while(i <= divs){
