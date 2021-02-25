@@ -53,20 +53,15 @@
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">            
             <div class="btn-toolbar mb-2 mb-md-0">
                 <div class="btn-group me-2">
-                <button type="button" class="btn btn-sm btn-outline-primary">Novo</button>
-                <button type="button" class="btn btn-sm btn-outline-success">Hoje</button>
+                    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#eventonovo">Novo</button>
+                    <button type="button" class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#eventohoje">Hoje</button>
                 </div>
-                <button type="button" class="btn btn-sm btn-outline-danger dropdown-toggle">
-                <span data-feather="calendar"></span>
-                This week
-                </button>
             </div>         
             </div>
-
             <div class="month">      
             <ul>
-                <li class="prev">&#10094;</li>
-                <li class="next">&#10095;</li>
+                <li class="prev" onclick='mes_antes()'>&#10094;</li>
+                <li class="next" onclick='mes_depois()'>&#10095;</li>
                 <li>
                 <?php echo strftime("%B"); ?><br>
                 <span style="font-size:18px"><?php echo date('Y'); ?></span>
@@ -101,15 +96,19 @@
             while($i <= $U_Dia){          
             
             if($i == $h_Dia){ ?>
-                <li data-bs-toggle="modal" data-bs-target="#modal_hoje" ><span class="active"><?php echo $i ; ?></span></li>
+                <li data-bs-toggle="modal" data-bs-target="#eventohoje" ><span class="active"><?php echo $i ; ?></span></li>
             <?php } else {  if($i >= $h_Dia){?>
 
-                <li data-bs-toggle="modal" data-bs-target="#modal_novo"> <?php echo $i ; ?></li>
+                <li data-bs-toggle="modal" data-bs-target="#eventonovo"> <?php echo $i ; ?></li>
             <?php } else{ ?>
                 <li> <?php echo $i ; ?></li>
             <?php }} $i++; } ?>          
             
             </ul>
+
+            <br>
+            <h4>Eventos de hoje</h4>
+            
 
         </div>
 
@@ -124,7 +123,7 @@
                     <input class="form-control" type="file" id="formFileMultiple" multiple>
                 </div>
                 <div class="col-auto">
-                    <button type="submit" class="btn btn-primary mb-3" onclick='mostra_oculta()'>Confirm identity</button>
+                    <button type="submit" class="btn btn-primary mb-3" onclick='mostra_oculta()'>Enviar</button>
                 </div>
             </form>
 
@@ -158,7 +157,83 @@
         <div id="4">
             <h2 align="center">To-Do</h2>
             <hr>
+
         </div>
+    </div>
+
+    <!-- Modal novo evento-->
+    <div class="modal fade" id="eventonovo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Novo evento</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            
+            <form>
+                <div class="row mb-3">
+                    <label for="inputData" class="col-sm-2 col-form-label">Data</label>
+                    <div class="col-sm-10">
+                    <input type="date" class="form-control" id="inputData">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="inputHorario" class="col-sm-2 col-form-label">Horário</label>
+                    <div class="col-sm-10">
+                    <input type="time" class="form-control" id="inputHorario">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="inputTitulo" class="col-sm-2 col-form-label">Título</label>
+                    <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputTitulo">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="inputDescricao" class="col-sm-2 col-form-label">Descrição</label>
+                    <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputDescricao">
+                    </div>
+                </div>                
+                <div class="row mb-3">
+                    <div class="col-sm-10 offset-sm-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck1">
+                        <label class="form-check-label" for="gridCheck1">
+                        Repetir
+                        </label>
+                    </div>
+                    </div>
+                </div>                
+            </form>
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button>
+            <button type="button" class="btn btn-primary">Salvar</button>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Modal evento de hoje-->
+    <div class="modal fade" id="eventohoje" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Evento hoje</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            ...
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button>
+            <button type="button" class="btn btn-primary">Salvar</button>
+        </div>
+        </div>
+    </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
