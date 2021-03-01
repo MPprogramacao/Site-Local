@@ -54,7 +54,7 @@
             <div class="btn-toolbar mb-2 mb-md-0">
                 <div class="btn-group me-2">
                     <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#eventonovo">Novo</button>
-                    <button type="button" class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#eventohoje">Hoje</button>
+                    <button type="button" class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#eventos">Eventos</button>
                 </div>
             </div>         
             </div>
@@ -108,7 +108,22 @@
 
             <br>
             <h4>Eventos de hoje</h4>
-            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Horário</th>
+                        <th scope="col">Evento</th>
+                        <th scope="col">Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Teste</th>
+                        <td>Teste</td>
+                        <td>Teste</td>
+                    </tr>
+                </tbody>
+            </table>
 
         </div>
 
@@ -163,77 +178,107 @@
 
     <!-- Modal novo evento-->
     <div class="modal fade" id="eventonovo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Novo evento</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            
-            <form>
-                <div class="row mb-3">
-                    <label for="inputData" class="col-sm-2 col-form-label">Data</label>
-                    <div class="col-sm-10">
-                    <input type="date" class="form-control" id="inputData">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Novo evento</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                
+                <form>
+                    <div class="row mb-3">
+                        <label for="inputData" class="col-sm-2 col-form-label">Data</label>
+                        <div class="col-sm-10">
+                        <input type="date" class="form-control" id="inputData">
+                        </div>
                     </div>
-                </div>
-                <div class="row mb-3">
-                    <label for="inputHorario" class="col-sm-2 col-form-label">Horário</label>
-                    <div class="col-sm-10">
-                    <input type="time" class="form-control" id="inputHorario">
+                    <div class="row mb-3">
+                        <label for="inputHorario" class="col-sm-2 col-form-label">Horário</label>
+                        <div class="col-sm-10">
+                        <input type="time" class="form-control" id="inputHorario">
+                        </div>
                     </div>
-                </div>
-                <div class="row mb-3">
-                    <label for="inputTitulo" class="col-sm-2 col-form-label">Título</label>
-                    <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputTitulo">
+                    <div class="row mb-3">
+                        <label for="inputTitulo" class="col-sm-2 col-form-label">Título</label>
+                        <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputTitulo">
+                        </div>
                     </div>
-                </div>
-                <div class="row mb-3">
-                    <label for="inputDescricao" class="col-sm-2 col-form-label">Descrição</label>
-                    <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputDescricao">
-                    </div>
-                </div>                
-                <div class="row mb-3">
-                    <div class="col-sm-10 offset-sm-2">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck1">
-                        <label class="form-check-label" for="gridCheck1">
-                        Repetir
-                        </label>
-                    </div>
-                    </div>
-                </div>                
-            </form>
+                    <div class="row mb-3">
+                        <label for="inputDescricao" class="col-sm-2 col-form-label">Descrição</label>
+                        <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputDescricao">
+                        </div>
+                    </div>                
+                    <div class="row mb-3">
+                        <div class="col-sm-10 offset-sm-2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                            <label class="form-check-label" for="gridCheck1">
+                            Repetir
+                            </label>
+                        </div>
+                        </div>
+                    </div>                
+                </form>
 
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button>
+                <button type="button" class="btn btn-primary">Salvar</button>
+            </div>
+            </div>
         </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button>
-            <button type="button" class="btn btn-primary">Salvar</button>
-        </div>
-        </div>
-    </div>
     </div>
 
     <!-- Modal evento de hoje-->
     <div class="modal fade" id="eventohoje" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Evento hoje</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            ...
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button>
-            <button type="button" class="btn btn-primary">Salvar</button>
-        </div>
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Evento hoje</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button>
+                <button type="button" class="btn btn-primary">Salvar</button>
+            </div>
+            </div>
         </div>
     </div>
+
+    <!-- Modal evento de hoje-->
+    <div class="modal fade" id="eventos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Eventos</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                        <th scope="col">Data</th>
+                        <th scope="col">Evento</th>
+                        <th scope="col">Descrição</th>
+                    </thead>
+                    <tbody>
+                        <td>12/02/2001</td>
+                        <td>Teste</td>
+                        <td>Teste2</td>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button>
+            <!-- <button type="button" class="btn btn-primary">Salvar</button> -->
+            </div>
+            </div>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
