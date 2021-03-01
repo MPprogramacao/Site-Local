@@ -11,6 +11,12 @@ body {font-family: Verdana, sans-serif;}
 
 } 
 
+.to-do {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .month {
   padding: 70px 25px;
   width: 100%;
