@@ -172,7 +172,31 @@
         <div id="4">
             <h2 align="center">To-Do</h2>
             <hr>
+            <div class="to-do">
+                <form>
+                    <div class="row g-3">
+                        <div class="col-auto">
+                            <label for="inputPassword2" class="visually-hidden">Nova tarefa</label>
+                            <input type="text" class="form-control" id="inputPassword2" placeholder="Nova tarefa">
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-primary mb-3">+</button>
+                        </div>
+                    </div>
 
+                    <div class="form-check">                
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                           Terminar todas os componetes
+                        </label>
+                        <br>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            PHP + js
+                        </label>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 
