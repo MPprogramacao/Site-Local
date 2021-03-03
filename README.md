@@ -1,3 +1,6 @@
+<h3 align="center">🚧Esse projeto está em desenvolvimeto🚧</h3>
+<hr>
+
 <h1 align="center">🏡 Site local</h1>
 <hr>
 <p>Um site básico para ficar hospedado em meu 🖥raspberry onde eu posso organizar minha ✅lista de afazeres e 🔝upar meus arquivos em meu servidor📂 </p>
